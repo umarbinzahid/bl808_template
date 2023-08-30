@@ -1,0 +1,11 @@
+{
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "cmake.configureOnOpen": true,
+    "cmake.configureArgs": [
+        "-DCHIP=bl808",
+        "-DBOARD=bl808dk",
+        "-DCPU_ID=m0",
+        "-DCROSS_COMPILE=riscv64-unknown-elf-"
+    ],
+    "cmake.generator": "Ninja"
+}
