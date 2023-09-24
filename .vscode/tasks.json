@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Flash",
+			"command": "${env:BL_SDK_BASE}/tools/bflb_tools/bouffalo_flash_cube/BLFlashCommand-ubuntu",
+			"args": [
+				"--interface=uart",
+				"--baudrate=2000000",
+				"--port=/dev/ttyUSB1",
+				"--chipname=bl808",
+				"--cpu_id=d0",
+				"--config=flash_prog_cfg.ini",
+			],
+			"group": {
+				"kind": "test",
+				"isDefault": false
+			},
+			"presentation":{
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "dedicated",
+				"showReuseMessage": true,
+				"clear": true
+			}
+		}
+	]
+}
