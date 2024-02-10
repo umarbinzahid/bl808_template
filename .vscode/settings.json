@@ -1,5 +1,10 @@
 {
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "C_Cpp.default.": "ms-vscode.cmake-tools",
+    "C_Cpp.exclusionPolicy": "checkFilesAndFolders",
+    "C_Cpp.files.exclude": {
+        "${workspaceFolder}/build/**": true
+    },
     "cmake.configureOnOpen": true,
     "cmake.configureArgs": [
         "-DCHIP=bl808",
