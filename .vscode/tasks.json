@@ -17,7 +17,7 @@
 				"kind": "test",
 				"isDefault": false
 			},
-			"presentation":{
+			"presentation": {
 				"echo": true,
 				"reveal": "always",
 				"focus": false,
@@ -25,6 +25,36 @@
 				"showReuseMessage": true,
 				"clear": true
 			}
-		}
+		},
+		{
+            "label": "CMake Configure",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-S", ".",
+				"-B", "build",
+				"-G", "Ninja",
+				"-DCHIP=bl808",
+				"-DBOARD=bl808dk",
+				"-DCPU_ID=d0",
+				"-DCROSS_COMPILE=riscv64-unknown-elf-",
+            ],
+            "group": {
+                "kind": "build",
+            },
+            "detail": "Configure the project using CMake"
+        },
+		{
+            "label": "Ninja Build",
+            "type": "shell",
+            "command": "ninja",
+            "args": [
+                "-C", "build",
+            ],
+            "group": "build",
+            "dependsOn": "CMake Configure",
+            "problemMatcher": ["$gcc"],
+            "detail": "Build the project using Ninja"
+        }
 	]
 }
